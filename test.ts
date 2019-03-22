@@ -6,8 +6,33 @@ let oppHP = 200;
 let isMyTurn = true;
 let currentPokemon = myPokemon;
 let damage1 = 50;
-//let damage2 = 50;
 
+const moves = [
+  {
+    name: "shadow balls",
+    damage: 50,
+    type: "fire"
+  },
+  {
+    name: "tackle",
+    damage: 5,
+    type: "fighting"
+  }
+];
+
+const moves2 = {
+  "shadow balls": {
+    damage: 50,
+    type: "fire"
+  },
+  tackle: {
+    damage: 5,
+    type: "fighting"
+  }
+};
+
+console.log("move index 1 " + moves[1].damage);
+console.log("move name shadow balls " + moves2["shadow balls"].damage);
 console.log("You have encountered a wild " + opponent);
 console.log("You send out " + myPokemon);
 console.log(myPokemon + " has " + myHP + " HP");
