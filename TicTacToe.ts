@@ -12,23 +12,30 @@ let tictactoe2 = ["0", "0", "0"];
 let tictactoe3 = ["0", "0", "0"];
 
 //1) show the tictactoe UI
-console.log("TicTacToe " + tictactoe1);
-console.log("TicTacToe " + tictactoe2);
-console.log("TicTacToe " + tictactoe3);
+console.log("Match Now");
+console.log(tictactoe1);
+console.log(tictactoe2);
+console.log(tictactoe3);
 
 startPlay();
 
-//need to check if got user won
 function startPlay() {
-  while (count <= 9 && isWont == false) {
-    count = count + 1;
-    console.log("count now " + count);
+  //while (count < 9 && isWont == false) {
+  while (count < 9) {
+    //check any winner
     if (!isWont) {
+      count = count + 1;
       playerXStart();
     }
-    if (!isWont) {
+    //check any winner
+    if (!isWont && count < 9) {
+      count = count + 1;
       playerYStart();
     }
+  }
+  //all filled and no winner
+  if (count == 9 && isWont == false) {
+    console.log("NO WINNER! Please play again");
   }
 }
 
@@ -36,8 +43,8 @@ function startPlay() {
 function playerXStart() {
   let ansPlayerXRow = 0;
   let ansPlayerXCol = 0;
-  ansPlayerXRow = parseInt(question("PlayerX - Choose Row Number\n"));
-  ansPlayerXCol = parseInt(question("PlayerX - Choose Column Number\n"));
+  ansPlayerXRow = parseInt(question("Player X - Choose Row Number\n"));
+  ansPlayerXCol = parseInt(question("Player X - Choose Column Number\n"));
   if (ansPlayerXRow <= 3 && ansPlayerXCol <= 3) {
     console.log(
       "Player X choose Row " + ansPlayerXRow + " and Column " + ansPlayerXCol
@@ -53,8 +60,8 @@ function playerXStart() {
 function playerYStart() {
   let ansPlayerYRow = 0;
   let ansPlayerYCol = 0;
-  ansPlayerYRow = parseInt(question("PlayerY - Choose Row Number\n"));
-  ansPlayerYCol = parseInt(question("PlayerY - Choose Column Number\n"));
+  ansPlayerYRow = parseInt(question("Player Y - Choose Row Number\n"));
+  ansPlayerYCol = parseInt(question("Player Y - Choose Column Number\n"));
   if (ansPlayerYRow <= 3 && ansPlayerYCol <= 3) {
     console.log(
       "Player Y choose Row " + ansPlayerYRow + " and Column " + ansPlayerYCol
@@ -90,8 +97,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
         playerYStart();
       }
     }
-  }
-  if (row == 2) {
+  } else if (row == 2) {
     if (tictactoe2[column] == "0") {
       tictactoe2[column] = player;
     } else {
@@ -108,8 +114,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
         playerYStart();
       }
     }
-  }
-  if (row == 3) {
+  } else if (row == 3) {
     if (tictactoe3[column] == "0") {
       tictactoe3[column] = player;
     } else {
@@ -127,13 +132,12 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
       }
     }
   }
-
   checkResult(player);
 }
 
 //resultChecking any winner
 function checkResult(paramPlayer) {
-  console.log("match now");
+  console.log("Match Now");
   console.log(tictactoe1);
   console.log(tictactoe2);
   console.log(tictactoe3);
@@ -144,8 +148,7 @@ function checkResult(paramPlayer) {
     tictactoe1[1] != "0" &&
     tictactoe1[2] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe2[0] == tictactoe2[1] &&
     tictactoe2[1] == tictactoe2[2] &&
@@ -153,8 +156,7 @@ function checkResult(paramPlayer) {
     tictactoe2[1] != "0" &&
     tictactoe2[2] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe3[0] == tictactoe3[1] &&
     tictactoe3[1] == tictactoe3[2] &&
@@ -162,8 +164,7 @@ function checkResult(paramPlayer) {
     tictactoe3[1] != "0" &&
     tictactoe3[2] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe1[0] == tictactoe2[0] &&
     tictactoe2[0] == tictactoe3[0] &&
@@ -171,8 +172,7 @@ function checkResult(paramPlayer) {
     tictactoe2[0] != "0" &&
     tictactoe3[0] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe1[1] == tictactoe2[1] &&
     tictactoe2[1] == tictactoe3[1] &&
@@ -180,8 +180,7 @@ function checkResult(paramPlayer) {
     tictactoe2[1] != "0" &&
     tictactoe3[1] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe1[2] == tictactoe2[2] &&
     tictactoe2[2] == tictactoe3[2] &&
@@ -189,8 +188,7 @@ function checkResult(paramPlayer) {
     tictactoe2[2] != "0" &&
     tictactoe3[2] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe1[0] == tictactoe2[1] &&
     tictactoe2[1] == tictactoe3[2] &&
@@ -198,8 +196,7 @@ function checkResult(paramPlayer) {
     tictactoe2[1] != "0" &&
     tictactoe3[2] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   } else if (
     tictactoe1[2] == tictactoe2[1] &&
     tictactoe2[1] == tictactoe3[0] &&
@@ -207,7 +204,12 @@ function checkResult(paramPlayer) {
     tictactoe2[1] != "0" &&
     tictactoe3[0] != "0"
   ) {
-    console.log("player " + paramPlayer + " WON!!");
-    isWont = true;
+    printCongrat(paramPlayer);
   }
+}
+
+//print congratulation
+function printCongrat(player) {
+  console.log("Congratulation!! Player " + player + " WON!!");
+  isWont = true;
 }
