@@ -17,6 +17,7 @@ console.log("TicTacToe " + tictactoe2);
 console.log("TicTacToe " + tictactoe3);
 
 startPlay();
+
 //need to check if got user won
 function startPlay() {
   while (count <= 9 && isWont == false) {
@@ -130,6 +131,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
   checkResult(player);
 }
 
+//resultChecking any winner
 function checkResult(paramPlayer) {
   console.log("match now");
   console.log(tictactoe1);
