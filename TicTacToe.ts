@@ -1,6 +1,3 @@
-//5) check result
-//6) result algorithm
-//7) repeat 2-5 or show UI
 import { question } from "readline-sync";
 
 let playerX = "X";
@@ -12,7 +9,7 @@ let tictactoe1 = ["0", "0", "0"];
 let tictactoe2 = ["0", "0", "0"];
 let tictactoe3 = ["0", "0", "0"];
 
-//1) show the tictactoe UI
+//show the tictactoe UI
 console.log("Match Now");
 console.log(tictactoe1);
 console.log(tictactoe2);
@@ -22,7 +19,6 @@ gameStart();
 
 function gameStart() {
   for (let i = 0; i < 5; i++) {
-    //isEven= i % 2==0
     if (!isWont) {
       playerStart("X");
     }
@@ -36,6 +32,7 @@ function gameStart() {
   }
 }
 
+//player X or Y function
 function playerStart(n) {
   let ansPlayerRow = 0;
   let ansPlayerCol = 0;
@@ -69,6 +66,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
   if (row == 1) {
     if (tictactoe1[column] == "0") {
       tictactoe1[column] = player;
+      checkResult(player);
     } else {
       console.log(
         "Row " +
@@ -86,6 +84,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
   } else if (row == 2) {
     if (tictactoe2[column] == "0") {
       tictactoe2[column] = player;
+      checkResult(player);
     } else {
       console.log(
         "Row " +
@@ -103,6 +102,7 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
   } else if (row == 3) {
     if (tictactoe3[column] == "0") {
       tictactoe3[column] = player;
+      checkResult(player);
     } else {
       console.log(
         "Row " +
@@ -118,10 +118,9 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
       }
     }
   }
-  checkResult(player);
 }
 
-//resultChecking any winner
+//result Checking any winner
 function checkResult(paramPlayer) {
   console.log("Match Now");
   console.log(tictactoe1);
