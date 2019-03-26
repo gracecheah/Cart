@@ -6,6 +6,7 @@ import { question } from "readline-sync";
 let playerX = "X";
 let playerY = "Y";
 let isWont = false;
+let isEven = true;
 let count = 0;
 let tictactoe1 = ["0", "0", "0"];
 let tictactoe2 = ["0", "0", "0"];
@@ -17,63 +18,48 @@ console.log(tictactoe1);
 console.log(tictactoe2);
 console.log(tictactoe3);
 
-startPlay();
+gameStart();
 
-function startPlay() {
-  //while (count < 9 && isWont == false) {
-  while (count < 9) {
-    //check any winner
+function gameStart() {
+  for (let i = 0; i < 5; i++) {
+    //isEven= i % 2==0
     if (!isWont) {
-      count = count + 1;
-      playerXStart();
+      playerStart("X");
     }
-    //check any winner
-    if (!isWont && count < 9) {
-      count = count + 1;
-      playerYStart();
+    if (!isWont && i < 4) {
+      playerStart("Y");
     }
-  }
-  //all filled and no winner
-  if (count == 9 && isWont == false) {
-    console.log("NO WINNER! Please play again");
+    //all filled and no winner
+    if (i == 4 && isWont == false) {
+      console.log("NO WINNER! Please play again");
+    }
   }
 }
 
-//2) PlayerX choose
-function playerXStart() {
-  let ansPlayerXRow = 0;
-  let ansPlayerXCol = 0;
-  ansPlayerXRow = parseInt(question("Player X - Choose Row Number\n"));
-  ansPlayerXCol = parseInt(question("Player X - Choose Column Number\n"));
-  if (ansPlayerXRow <= 3 && ansPlayerXCol <= 3) {
+function playerStart(n) {
+  let ansPlayerRow = 0;
+  let ansPlayerCol = 0;
+  ansPlayerRow = parseInt(question("Player " + n + " - Choose Row Number\n"));
+  ansPlayerCol = parseInt(
+    question("Player " + n + " - Choose Column Number\n")
+  );
+  if (ansPlayerRow <= 3 && ansPlayerCol <= 3) {
     console.log(
-      "Player X choose Row " + ansPlayerXRow + " and Column " + ansPlayerXCol
+      "Player " +
+        n +
+        " choose Row " +
+        ansPlayerRow +
+        " and Column " +
+        ansPlayerCol
     );
-    displayUI("X", ansPlayerXRow, ansPlayerXCol);
+    displayUI(n, ansPlayerRow, ansPlayerCol);
   } else {
     console.log("please choose the right row or column");
-    playerXStart();
+    playerStart(n);
   }
 }
 
-//4) PlayerY choose
-function playerYStart() {
-  let ansPlayerYRow = 0;
-  let ansPlayerYCol = 0;
-  ansPlayerYRow = parseInt(question("Player Y - Choose Row Number\n"));
-  ansPlayerYCol = parseInt(question("Player Y - Choose Column Number\n"));
-  if (ansPlayerYRow <= 3 && ansPlayerYCol <= 3) {
-    console.log(
-      "Player Y choose Row " + ansPlayerYRow + " and Column " + ansPlayerYCol
-    );
-    displayUI("Y", ansPlayerYRow, ansPlayerYCol);
-  } else {
-    console.log("please choose the right row or column");
-    playerXStart();
-  }
-}
-
-// 3) show the current match
+// show the current match
 function displayUI(paramPlayer, paramRow, paramColumn) {
   let player = paramPlayer;
   let row = paramRow;
@@ -92,9 +78,9 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
           " occupied. Please choose empty row and column"
       );
       if (player == "X") {
-        playerXStart();
+        playerStart("X");
       } else {
-        playerYStart();
+        playerStart("Y");
       }
     }
   } else if (row == 2) {
@@ -109,9 +95,9 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
           " occupied. Please choose empty row and column"
       );
       if (player == "X") {
-        playerXStart();
+        playerStart("X");
       } else {
-        playerYStart();
+        playerStart("Y");
       }
     }
   } else if (row == 3) {
@@ -126,9 +112,9 @@ function displayUI(paramPlayer, paramRow, paramColumn) {
           " occupied. Please choose empty row and column"
       );
       if (player == "X") {
-        playerXStart();
+        playerStart("X");
       } else {
-        playerYStart();
+        playerStart("Y");
       }
     }
   }
