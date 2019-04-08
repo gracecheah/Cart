@@ -1,5 +1,5 @@
-<!-- The content below is only a placeholder and can be replaced.
-<div style="text-align:center">
+<!-- The content below is only a placeholder and can be replaced. -->
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,18 +16,12 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
- -->
+<!-- <h1>{{ todoListTitle }}</h1>
 
-<h1>{{ todoListTitle }}</h1>
-<!-- ngIf conditional rendering  -->
 <div *ngIf="todosTasks.length !== 0">
   <ul>
-    <!-- for loop for angular 
-  applied only the class if value=true
-  (click) this is event
-  onClickTask is function name-->
     <li
       *ngFor="let task of todosTasks"
       [class.completed]="todos[task]"
@@ -47,4 +41,31 @@
 </div>
 
 <button (click)="onClearList()">Clear List</button>
-<button (click)="onAddTask()">Add Task</button>
+<button (click)="onAddTask()">Add Task</button> 
+ -->
+
+<!-- for loop for angular 
+  applied only the class if value=true
+  (click) this is event
+  onClickTask is function name-->
+
+<div id="board">
+  <div
+    class="cell"
+    *ngFor="let cell of moves; let i = index"
+    [style.background-color]="checkCellColor(i)"
+    (click)="playPiece(i)"
+    (mouseover)="hoverOver(i)"
+  >
+    <p>{{ cell === blankSymbol ? "" : cell }}</p>
+  </div>
+</div>
+
+<div>It is now {{ currentTurn }}'s turn</div>
+
+<div *ngIf="gameOver && winner !== null">
+  <h4>Game Over. {{ winner }} has won the game.</h4>
+</div>
+<div *ngIf="gameOver && winner === null">
+  <h4>Game Over. It is a draw</h4>
+</div>

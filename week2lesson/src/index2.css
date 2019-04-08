@@ -1,0 +1,42 @@
+h1 {
+  color: black;
+  background-color: rgb(132, 68, 181, 0);
+}
+
+ul li {
+  font-size: 20px;
+}
+
+ol li {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+table {
+  background-color: yellow;
+}
+
+div p {
+  background-color: yellow;
+}
+
+div > p {
+  background-color: purple;
+}
+
+p {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.specs-card {
+  width: 200px;
+  border: 1px solid black;
+}
+
+#special-card {
+  border: 2px solid red;
+}

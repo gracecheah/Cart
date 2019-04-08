@@ -1,0 +1,166 @@
+#top-nav {
+  background-color: #0087c7;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+}
+
+#navbar-logo {
+  height: 100%;
+}
+
+.navbar-button {
+  display: inline-block;
+}
+
+#parent {
+  background-color: yellow;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+}
+
+.child {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+body {
+  margin: 0px;
+}
+
+#parent1 {
+  background-color: green;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  /*overflow: scroll;*/
+}
+
+#parent1:hover {
+  background-color: cyan;
+}
+
+.child1 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  left: 50%;
+  /*margin: auto;*/
+  margin-left: 80%;
+}
+
+#parent2 {
+  background-color: orange;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  /*justify-content: center;*/
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  /*align-items:center;*/
+}
+
+.child2 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+}
+
+#parent3 {
+  background-color: burlywood;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+}
+.child3 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#parent4 {
+  background-color: orange;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  /*justify-content: flex-end;*/
+  align-items: center;
+}
+
+.child4 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  left: 50%;
+}
+
+#parent4 {
+  background-color: orange;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  /*justify-content: flex-end;*/
+  align-items: center;
+}
+
+.child4 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  left: 50%;
+}
+
+#parent5 {
+  background-color: yellow;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
+  width: 80%;
+}
+
+.child5 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  float: left;
+}
+
+.child6 {
+  border: 1px solid red;
+  height: 50px;
+  width: 20%;
+  float: right;
+}
+
+@media screen and (min-width: 900px) {
+  article {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  article {
+    width: 100vw;
+  }
+}
+
+/* Horizontal Centering */
+/* text-align: center */
+/* margin: auto / explicitly setting margins */
+/* display flex */
+/* position absolute centering */

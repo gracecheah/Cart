@@ -1,0 +1,156 @@
+<head>
+  <link rel="stylesheet" href="./stylefile.css" />
+  <link rel="icon" type="image/png" href="./Images/dell-logo.png" />
+  <script type="text/javascript" src="./Config.ts"></script>
+</head>
+
+<body>
+  <header>
+    <div class="bgcolor" id="navbar">
+      <title>XPS 13</title>
+      <nav class="row">
+        <img src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png"
+          height="50px" width="105px" />
+        <ul style width=100%>
+          <li>
+            <a class="fontdesign" href="#">Home</a>
+            <a class="fontdesign" href="#">Cart</a>
+            <a class="fontdesign" href="#">My Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <h1>Dell XPS 13</h1>
+
+
+  <div class="row">
+    <div id="scrollconfigleft" class="column" style="flex-direction: column">
+      <div>
+        <form id="screenform" action="">
+          <p><b>Screensize</b></p>
+          <label class="radiobox">
+            <input type="radio" id="screenrd1" name=screen value="1920 X 1080 Anti Glare IPS"
+              onclick="getValue(id,value)">1920 X 1080 Anti Glare IPS<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="screenrd2" name=screen value="2560 X 1440 Anti Glare IPS"
+              onclick="getValue(id,value)">2560 X 1440 Anti Glare IPS<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="screenrd3" name=screen value="3840 X 2160 Anti Glare IPS"
+              onclick="getValue(id,value)">3840 X 2160 Anti Glare IPS<br>
+            <span class="checkmark"></span>
+          </label>
+        </form>
+      </div>
+
+      <div>
+        <form id="ramform" action="">
+          <p><b>RAM</b></p>
+          <label class="radiobox">
+            <input type="radio" id="ramrd1" name=screen value="4GB RAM" onclick="getValue(id,value)">4GB RAM<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="ramrd2" name=screen value="8GB RAM" onclick="getValue(id,value)">8GB RAM<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="ramrd3" name=screen value="16GB RAM" onclick="getValue(id,value)">16GB RAM<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="ramrd4" name=screen value="32GB RAM" onclick="getValue(id,value)">32GB RAM<br>
+            <span class="checkmark"></span>
+          </label>
+        </form>
+      </div>
+    </div>
+
+    <div id="config" class="column" onscroll="myFunction">
+      <img
+        src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/xps_notebooks/xps_15_9570/pdp/notebooks-xps-15-9570-laptop-pdp-design-mod2.jpg?fmt=png-alpha"
+        height="312px" width="555px" align='right'>
+    </div>
+
+    <div id="scrollconfigright" class="column" style="flex-direction: column;">
+      <div>
+        <form id="cpuform" action="">
+          <p><b>Processor</b></p>
+          <label class="radiobox">
+            <input type="radio" id="cpurd1" name=screen value="i5-4770HQ 4.0Ghz" onclick="getValue(id,value)">i5-4770HQ
+            4.0Ghz<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="cpurd2" name=screen value="i7-4770HQ 4.2Ghz" onclick="getValue(id,value)">i7-4770HQ
+            4.2Ghz<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="cpurd3" name=screen value="i7-4970HQ 4.4Ghz" onclick="getValue(id,value)">i7-4970HQ
+            4.4Ghz<br>
+            <span class="checkmark"></span>
+          </label>
+        </form>
+      </div>
+
+      <div>
+        <form id="hddform" action="">
+          <p><b>Processor</b></p>
+          <label class="radiobox">
+            <input type="radio" id="hddrd1" name=screen value="1TB HDD" onclick="getValue(id,value)">1TB HDD<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="hddrd2" name=screen value="256GB SSD" onclick="getValue(id,value)">256GB SSD<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="hddrd3" name=screen value="512GB SSD" onclick="getValue(id,value)">512GB SSD<br>
+            <span class="checkmark"></span>
+          </label>
+          <label class="radiobox">
+            <input type="radio" id="hddrd4" name=screen value="1TB SSD" onclick="getValue(id,value)">1TB SSD<br>
+            <span class="checkmark"></span>
+          </label>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="row2">
+      <div class="specfooterlayout">
+        <a id="display">Display</a>
+      </div>
+      <div class="specfooterlayout">
+        <a id="processor">Processor</a>
+      </div>
+      <div class="specfooterlayout">
+        <a id="ram">RAM</a>
+      </div>
+      <div class="specfooterlayout">
+        <a id="hdd">Hard Disk</a>
+      </div>
+      <div class="specfooterlayout">
+        <a>RM4500</a>
+        <a href="C:/Users/chun_yew_yeap/Downloads/NEXT%20Training/HTML%20and%20JS/Configuration.html"><button
+            type="button">Configure</button></a>
+      </div>
+    </div>
+    <div class="bgcolor" style="display:flex;">
+      <div class="footerspacing"><a class="fontdesign" href="#">Terms and Conditions</a></div>
+      <div class="footerspacing"><a class="fontdesign" href="#">Privacy Statement</a></div>
+      <div class="footerspacing"><a class="fontdesign" href="#">About Dell</a></div>
+      <div class="footerspacing"><a class="fontdesign" href="#">Contact Us</a></div>
+    </div>
+  </footer>
+</body>

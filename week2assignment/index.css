@@ -1,0 +1,15 @@
+#top-nav {
+  background-color: #0087c7;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+}
+
+#navbar-logo {
+  height: 100%;
+}
+
+.navbar-button {
+  margin: 0;
+  margin-left: 80%;
+}
