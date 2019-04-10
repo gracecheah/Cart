@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <a class="logo" (click)="showAllProduct()"></a>
+  <nav (click)="myCart()">
+    <ul>
+      <li><a>My Cart</a></li>
+    </ul>
+  </nav>
+</div>
+<div *ngIf="show !== null">
+  <h1>Product List</h1>
+  <div
+    id="product1"
+    *ngFor="let product of allProducts; let i = index"
+    [style.background-color]="checkSelected(i)"
+  >
+    <div class="product-image" *ngIf="product.cartQty === 0">
+      <img src="{{ product.image }}" />
+    </div>
+    <div class="product-desp" *ngIf="product.cartQty === 0">
+      Product id: {{ product.id }}
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="product-price" *ngIf="product.cartQty === 0">
+      ${{ product.price }}
+    </div>
+    <div class="qty" *ngIf="product.cartQty === 0">
+      <button (click)="minusQty(i)">-</button>
+      {{ productQty[i] }}
+      <button (click)="addQty(i)">+</button>
+    </div>
+    <div class="select-button" *ngIf="product.cartQty === 0">
+      <button (click)="onSelectProduct(i)">Select</button>
+    </div>
+  </div>
+  <div class="cart">
+    <button
+      (click)="addToCart(selectedIndex)"
+      *ngIf="selectedIndex !== null && productQty[selectedIndex] !== 0"
+    >
+      Add To Cart
+    </button>
+    <button (click)="clearCart()">Clear Cart</button>
+    <br />Total: $ {{ grandTotalPrice }}
+  </div>
+</div>
