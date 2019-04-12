@@ -1,0 +1,6 @@
+<h4>Pokemon List</h4>
+<ul>
+  <li *ngFor="let pokemon of pokemons">
+    <a routerLink="/pokemon/{{ pokemon }}">{{ pokemon }}</a>
+  </li>
+</ul>

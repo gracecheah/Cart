@@ -1,0 +1,8 @@
+<div [class.hidden]="currentlyHidden">
+  <h4>Evolution Info</h4>
+  <ul>
+    <li *ngFor="let evolution of evolutions">
+      {{ evolution.name }}
+    </li>
+  </ul>
+</div>

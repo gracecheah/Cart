@@ -1,0 +1,14 @@
+<a routerLink="/">
+  <button>Home</button>
+</a>
+
+<button (click)="toggleGeneralInfo()">Toggle General Info</button>
+<button (click)="toggleEvolutionInfo()">Toggle Evolution Info</button>
+<button (click)="toggleMovesetInfo()">Toggle Moveset Info</button>
+
+<app-general-info
+  [currentlyHidden]="hideGeneral"
+  [specificPokemon]="specificPokemon"
+></app-general-info>
+<app-evolution-info [currentlyHidden]="hideEvolution"></app-evolution-info>
+<app-moveset-info [currentlyHidden]="hideMoveset"></app-moveset-info>

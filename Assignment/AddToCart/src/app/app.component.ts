@@ -12,6 +12,7 @@ export class AppComponent {
   qty: number = 0;
   show = null;
   grandTotalPrice: number = 0;
+  showCart = null;
 
   allProducts = [
     {
@@ -134,30 +135,37 @@ export class AppComponent {
     }
     return "white";
   }
+
   addQty(index: number) {
     this.productQty[index] += 1;
     return this.productQty[index];
   }
+
   minusQty(index: number) {
     if (this.productQty[index] !== 0) {
       this.productQty[index] = this.productQty[index] - 1;
     }
     return this.productQty[index];
   }
+
   addToCart(index: number) {
     this.allProducts[index].cartQty = this.productQty[index];
     // tslint:disable-next-line: prefer-for-of
+    // let i in this.allProducts
+    // this.myCart.push(product)
     for (let a = 0; a < this.allProducts.length; a++) {
       this.grandTotalPrice =
         this.grandTotalPrice +
         this.allProducts[a].cartQty * this.allProducts[a].price;
     }
   }
+
   clearCart() {
     for (let a = 0; a < this.allProducts.length; a++) {
       this.grandTotalPrice = 0;
       this.allProducts[a].cartQty = 0;
     }
+    this.selectedIndex = 0;
   }
 
   showAllProduct() {

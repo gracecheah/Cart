@@ -1,0 +1,29 @@
+<div [class.blue-text]="miscService.isElementBlue">
+  <div [class.hidden]="currentlyHidden">
+    <h4>MoveSet Info</h4>
+    <table>
+      <tr>
+        <td>Level</td>
+        <td>Name</td>
+        <td>Types</td>
+        <td>Power</td>
+        <td>Accuracy</td>
+        <td>PP</td>
+      </tr>
+      <tr *ngFor="let move of moves">
+        <td>{{ move.levelLearned }}</td>
+        <td>{{ move.name }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let type of move.types">
+              {{ type }}
+            </li>
+          </ul>
+        </td>
+        <td>{{ move.power }}</td>
+        <td>{{ move.accuracy }}</td>
+        <td>{{ move.pp }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

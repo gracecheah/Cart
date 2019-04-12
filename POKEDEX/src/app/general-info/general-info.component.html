@@ -1,0 +1,24 @@
+<div *ngIf="specificPokemon === null">
+  <h4>Loading Pokemon</h4>
+</div>
+<div *ngIf="specificPokemon">
+  <div [class.hidden]="currentlyHidden">
+    <h3>General Info</h3>
+    <div>
+      <h4>ID</h4>
+      <p>{{ id }}</p>
+      <h4>Name</h4>
+      <p>{{ specificPokemon.name }}</p>
+      <h4>Weight</h4>
+      <p>{{ weight }}</p>
+      <div [class.red-text]="checkRed()">
+        <h4>Elemental Type</h4>
+        <ul>
+          <li *ngFor="let type of types">
+            {{ type.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

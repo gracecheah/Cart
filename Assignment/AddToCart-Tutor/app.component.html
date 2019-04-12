@@ -1,0 +1,58 @@
+<nav>
+  <img 
+    src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png"
+    (click)="setIsProductList(true)"
+  >
+  <h1>{{calculateTotalPrice()}}</h1>
+  <div id="my-cart-button" (click)="setIsProductList(false)"> 
+    My Cart
+  </div>
+</nav>
+<div id="container" *ngIf="isProductList">
+  <ul class="product-list">
+    <li class="product-item" *ngFor="let product of availableProducts(); let i = index" [class.selected]="product.selected">
+      <div class="product-details">
+        <img [src]="product.image" />
+        <div>
+          <h4>Product {{product.id}}</h4>
+          <p>{{product.description}}</p>
+        </div>
+      </div>
+      <div class="product-actions">
+        <div>Single Price : RM {{product.price}}</div>
+        <div>Total Price :  RM {{product.price * product.quantity}}</div>
+        <div class="product-increment">
+          <button (click)="reduceQuantity(i)">-</button>
+          <span>{{product.quantity}}</span>
+          <button (click)="addQuantity(i)">+</button>
+        </div>
+        <button class="product-select-btn" (click)="selectItem(i)" >Select Item</button>
+      </div>
+    </li>
+  </ul>
+</div>
+<div id="container" *ngIf="!isProductList">
+      <ul class="product-list">
+        <li class="product-item" *ngFor="let product of myCart; let i = index">
+          <div class="product-details">
+            <img [src]="product.image"/>
+            <div>
+              <h4>Product {{product.id}}</h4>
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+          <div class="product-actions">
+            <div>Single Price : RM {{product.price}}</div>
+            <div>Total Price : RM {{product.price * product.quantity}}</div>
+            <div>
+              <span>Quantity : {{product.quantity}}</span>
+            </div>
+            <button class="product-select-btn" (click)="removeItem(i)">Remove Item</button>
+          </div>
+        </li>
+      </ul>  
+</div>
+<footer>
+  <button (click)="addToCart()" [class.disabled]="!hasSelectedItems()">Add To Cart</button>
+  <button (click)="clearMyCart()" >Clear My Cart</button>
+</footer>
