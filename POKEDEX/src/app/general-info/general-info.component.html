@@ -11,7 +11,7 @@
       <p>{{ specificPokemon.name }}</p>
       <h4>Weight</h4>
       <p>{{ weight }}</p>
-      <div [class.red-text]="checkRed()">
+      <div [class.red-text]="getElementIsRed()">
         <h4>Elemental Type</h4>
         <ul>
           <li *ngFor="let type of types">

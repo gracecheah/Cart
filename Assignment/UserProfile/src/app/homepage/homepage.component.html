@@ -1,0 +1,8 @@
+<h1>User List</h1>
+<ul>
+  <li *ngFor="let user of userList">
+    <h2>{{ user.username }}</h2>
+    <img class="profile-image" src="{{ user.profileImage }}" />
+    <a routerLink="users/{{ user.id }}">{{ user.id }}</a>
+  </li>
+</ul>
