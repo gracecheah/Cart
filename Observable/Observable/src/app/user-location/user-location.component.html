@@ -1,0 +1,11 @@
+<h1>
+  user-location
+</h1>
+<div *ngFor="let user of users">
+  <p>User Address: {{ user.address.street }}</p>
+  <p>Street: {{ user.address.street }}</p>
+  <p>Suite: {{ user.address.suite }}</p>
+  <p>City: {{ user.address.city }}</p>
+  <p>Zipcode: {{ user.address.zipcode }}</p>
+  <p>Geo: {{ user.address.geo.lat }};{{ user.address.geo.lng }}</p>
+</div>
