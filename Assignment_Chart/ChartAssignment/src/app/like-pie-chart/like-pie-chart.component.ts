@@ -37,6 +37,20 @@ export class LikePieChartComponent implements OnInit {
       }
     }
 
+    // <app-all-purpose-chart
+    // [chartType]="'pie'"
+    // [chartData]="numberOfLikesPerTag.data"
+    // [chartLabels]="numberOfLikesPerTag.labels"></app-all-purpose-chart>
+
+    // let chartData = []
+    // for(let tag in aggregateTagLikes){
+    //   this.numberOfLikesPerTag.labels.push(tag)
+    //   chartData.push(aggregateTagLikes[tag])
+    // }
+    // this.numberOfLikesPerTag.data = [{
+    //   data: chartData
+    // }]
+
     this.chartLabels = Object.keys(tagLikeCount);
     for (let tag of Object.keys(tagLikeCount)) {
       dataset.push(tagLikeCount[tag]);

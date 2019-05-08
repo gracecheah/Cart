@@ -25,6 +25,8 @@ export class ImagestagComponent implements OnInit {
       }
     }
 
+
+
     this.chartLabels = Object.keys(tagLikeCount);
     for (let tag of Object.keys(tagLikeCount)) {
       dataset.push(tagLikeCount[tag]);
