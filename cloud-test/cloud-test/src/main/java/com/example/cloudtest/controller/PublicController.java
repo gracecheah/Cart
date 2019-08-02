@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PublicController {
   @GetMapping(value = "/")
   public String test() {
-    return "{\"message\": \"test\"}";
+    return "{\"message\": \"testss\"}";
   }
 }
