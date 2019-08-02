@@ -1,0 +1,4 @@
+applications:
+- name: cloudTest
+  random-route: true
+  path: target\cloud-test-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,7 @@
+/**
+ * Conjured
+ */
+public class Conjured {
+
+  
+}

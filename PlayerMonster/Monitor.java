@@ -1,0 +1,6 @@
+/**
+ * Monitor
+ */
+public class Monitor {
+
+}

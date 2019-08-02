@@ -1,0 +1,6 @@
+/**
+ * NormalItem
+ */
+public class NormalItem {
+
+}

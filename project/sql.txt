@@ -1,0 +1,47 @@
+
+insert into [dbo].[requests]
+values('Jane Lim','888888028888','0160000000','PJN999','20190818 10:00:0 AM','20190818 05:00:0 PM','event','IT','New',1,2,'20190816 10:00:0 AM',1,'20190816 10:00:0 AM')
+
+
+
+insert into [dbo].[users] 
+values ('Grace Cheah','221935','IT','8632589','grace_cheah@dell.com','FALSE')
+insert into [dbo].[users] 
+values ('Shih Jun Teh','615872','IT','8636204','Shih_Jun_Teh@Dell.com','FALSE')
+insert into [dbo].[users] 
+values ('Dastan Ong','1056275','IT','0124868862','Ong_Chun_Tat_Dastan@Dell.com','FALSE')
+insert into [dbo].[users] 
+values ('Chia Ling Lim','221935','IT','797011','Chia_Ling_Lim@Dell.com','TRUE')
+
+
+
+{
+     
+        "name": "Peter Lim",
+        "ic": "888888028888",
+        "phone": "0160000000",
+        "carPlate": "PJN999",
+        "visitFrom": "2019-08-18 10:00:00.000",
+        "visitTo": "2019-08-18 17:00:00.000",
+        "purpose": "event",
+        "department": "IT",
+        "status": "New",
+        "primaryContactId":1,
+        "alternativeContactId":2,
+        "createdAt": "2019-08-18 10:00:00.000",
+        "createdBy":1,
+        "updatedAt": "2019-08-18 10:00:00.000"
+    }
+
+
+
+
+  @PostMapping(value = "/request")
+  public void addRequest(@RequestBody Request request) {
+    requestRepository.save(request);
+  }
+
+  @GetMapping(value = "/allrequest", produces = "application/json")
+  public List<Request> displayAllRequest() {
+    return requestRepository.findAll();
+  }

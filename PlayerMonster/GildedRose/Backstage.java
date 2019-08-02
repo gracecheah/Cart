@@ -1,0 +1,6 @@
+/**
+ * Backstage
+ */
+public class Backstage {
+
+}

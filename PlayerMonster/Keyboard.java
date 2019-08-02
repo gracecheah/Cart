@@ -1,0 +1,6 @@
+/**
+ * Keyboard
+ */
+public class Keyboard {
+
+}

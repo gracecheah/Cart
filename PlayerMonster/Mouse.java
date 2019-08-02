@@ -1,0 +1,6 @@
+/**
+ * Mouse
+ */
+public class Mouse {
+
+}

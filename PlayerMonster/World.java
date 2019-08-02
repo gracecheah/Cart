@@ -1,0 +1,6 @@
+/**
+ * World
+ */
+public class World {
+
+}
