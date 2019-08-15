@@ -2,3 +2,8 @@ applications:
 - name: cloudTest
   random-route: true
   path: target\cloud-test-0.0.1-SNAPSHOT.jar
+  env: 
+#     SPRING_DATABASE_URL: jdbc:postgresql://raja.db.elephantsql.com:5432/swwbojmh
+#     SPRING_DATASOURCE_USERNAME: swwbojmh
+#     SPRING_DATASOURCE_PASSWORD: LrL4gRS7w0gwPj_VRcEzOY5T5yD-ZafK
+    SPRING_PROFILES_ACTIVE: prod
